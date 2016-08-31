@@ -17,10 +17,12 @@ CI服务器:  不适用jenkins的gerrit trigger plugin,自实现gerrit trigger�
 数据展示:  ci system/service。
 
 User Case:
-Demo 1: CR触发CI\n
+Demo 1: CR触发CI
+
 用户提交CR-》gerrit trigger发现-》checkout patch-》代码检查服务 && 编译打包服务-》更新CR
 
-Demo 2: 每天定时触发CI\n
+Demo 2: 每天定时触发CI
+
 每天定时-》pull代码-》编译打包服务-》测试服务-》展示结果
 
 设计详情
