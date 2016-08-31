@@ -22,7 +22,9 @@ Demo 2: 每天定时触发CI
 每天定时-》pull代码-》编译打包服务-》测试服务-》展示结果
 
 设计详情
+
 ![](https://github.com/smithallen/android-ci/blob/master/screenshots/ci-design.png)
+
 a.gerrit trigger
     获取gerrit的 stream-event，筛选符合条件的event，放到redis的队列中。
 b.web service
