@@ -17,10 +17,10 @@ CI服务器:  不适用jenkins的gerrit trigger plugin,自实现gerrit trigger�
 数据展示:  ci system/service。
 
 User Case:
-Demo 1: CR触发CI
+Demo 1: CR触发CI\n
 用户提交CR-》gerrit trigger发现-》checkout patch-》代码检查服务 && 编译打包服务-》更新CR
 
-Demo 2: 每天定时触发CI
+Demo 2: 每天定时触发CI\n
 每天定时-》pull代码-》编译打包服务-》测试服务-》展示结果
 
 设计详情
@@ -28,15 +28,19 @@ Demo 2: 每天定时触发CI
 ![](https://github.com/smithallen/android-ci/blob/master/screenshots/ci-design.png)
 
 a.gerrit trigger
+
     获取gerrit的 stream-event，筛选符合条件的event，放到redis的队列中。
 b.web service
+
     项目创建及分支CI的操作。
     页面展示，分项目分别展示CR及定时CI的信息
 c.调度编译打包
+
     从redis中获取gerrit event，触发Demo1中的任务流。
     定时触发各个项目的CI，Demo2中的任务流。
     将进展及结果写入mongodb
 d.static code check
+
     使用checkstyle 进行增量代码检查
     使用findbugs 进行增量代码检查
     使用PMD 进行增量代码检查
